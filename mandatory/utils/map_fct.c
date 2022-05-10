@@ -6,7 +6,7 @@
 /*   By: med-doba <med-doba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 16:15:58 by med-doba          #+#    #+#             */
-/*   Updated: 2022/04/27 22:26:29 by med-doba         ###   ########.fr       */
+/*   Updated: 2022/05/08 16:25:55 by med-doba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 int	ft_rectangular(t_lay *mo)
 {
-	int	l;
 	int	x;
 	int	i;
 
 	i = 0;
-	l = ft_strlen(mo->map[0]);
+	mo->l = ft_strlen(mo->map[0]);
 	while (i < mo->height)
 	{
-		if (l != ft_strlen(mo->map[0]))
+		if (mo->l != ft_strlen(mo->map[0]))
 			x = 0;
 		else if (i + 1 < mo->height)
 		{
-			l = ft_strlen(mo->map[i + 1]);
+			mo->l = ft_strlen(mo->map[i + 1]);
 			x = 1;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: med-doba <med-doba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 13:30:09 by med-doba          #+#    #+#             */
-/*   Updated: 2022/04/24 15:37:51 by med-doba         ###   ########.fr       */
+/*   Updated: 2022/05/08 16:29:07 by med-doba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,11 @@ char	*sendline(char *ptr)
 	index = endline(ptr);
 	if (index != -1)
 	{
-		rtn = malloc(sizeof(char) * (index + 2));
+		rtn = malloc(sizeof(char) * (index + 1));
 		if (!rtn)
 			return (NULL);
 		ftt_memcpy(rtn, ptr, index);
-		rtn[index] = '\n';
-		rtn[index + 1] = '\0';
+		rtn[index] = '\0';
 	}
 	else if (*ptr != '\0' && index == -1)
 	{
